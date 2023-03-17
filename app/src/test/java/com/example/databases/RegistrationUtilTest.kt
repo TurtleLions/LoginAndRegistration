@@ -1,9 +1,9 @@
-package com.example.loginandregistration
+package com.example.databases
 
-import com.example.loginandregistration.RegistrationUtil.RegistrationUtil.validateUsername
-import com.example.loginandregistration.RegistrationUtil.RegistrationUtil.validatePassword
-import com.example.loginandregistration.RegistrationUtil.RegistrationUtil.validateName
-import com.example.loginandregistration.RegistrationUtil.RegistrationUtil.validateEmail
+import com.example.databases.RegistrationUtil.RegistrationUtil.validateUsername
+import com.example.databases.RegistrationUtil.RegistrationUtil.validatePassword
+import com.example.databases.RegistrationUtil.RegistrationUtil.validateName
+import com.example.databases.RegistrationUtil.RegistrationUtil.validateEmail
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 

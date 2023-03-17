@@ -3,9 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+
+
 android {
     compileSdk 32
-
     defaultConfig {
         applicationId "com.example.loginandregistration"
         minSdk 23
@@ -29,6 +30,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dependencies {
+        implementation group: 'com.backendless', name: 'backendless', version: '7.0-alpha'
+        implementation ('io.socket:socket.io-client:1.0.0') {
+            exclude group: 'org.json', module: 'json'
+        }
     }
     kotlinOptions {
         jvmTarget = '1.8'

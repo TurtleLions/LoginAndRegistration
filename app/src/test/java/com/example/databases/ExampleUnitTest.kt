@@ -1,4 +1,4 @@
-package com.example.loginandregistration
+package com.example.databases
 
 import org.junit.Test
 
