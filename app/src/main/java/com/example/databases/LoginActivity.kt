@@ -11,6 +11,7 @@ import com.backendless.Backendless
 import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
+import com.backendless.persistence.DataQueryBuilder
 import com.example.databases.databinding.ActivityLoginBinding
 
 
@@ -20,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
         val TAG = "LoginActivity"
         val EXTRA_USERNAME = "username"
         val EXTRA_PASSWORD = "password"
+        val EXTRA_USERID = "User Id"
     }
 
     val startRegistrationForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
@@ -55,7 +57,12 @@ class LoginActivity : AppCompatActivity() {
                     override fun handleResponse(user: BackendlessUser?) {
                         // user has been logged in
                         Log.d(TAG, "handleResponse: ${user?.getProperty("username")} has logged in")
-                        retrieveAllData()
+                        val loanListIntent = Intent(this@LoginActivity, LoanListActivity::class.java).apply{
+                            putExtra(EXTRA_USERID, user!!.getProperty("objectId").toString())
+                        }
+                        startActivity(loanListIntent)
+                        finish()
+
                     }
 
                     override fun handleFault(fault: BackendlessFault) {
@@ -67,18 +74,5 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun retrieveAllData() {
-        Backendless.Data.of(Loan::class.java).find(object : AsyncCallback<List<Loan?>?> {
-            override fun handleResponse(foundLoans: List<Loan?>?) {
-                // all Contact instances have been found
-                Log.d(TAG, "handleResponse: $foundLoans")
-            }
 
-            override fun handleFault(fault: BackendlessFault) {
-                // an error has occurred, the error code can be retrieved with fault.getCode()
-                Log.d(TAG, "handleFault ${fault.message}")
-            }
-        })
-
-    }
 }

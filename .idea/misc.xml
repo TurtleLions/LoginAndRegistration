@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_delete.xml" value="0.154" />
+        <entry key="app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.154" />
         <entry key="app/src/main/res/layout/activity_loan_detail.xml" value="0.4026268115942029" />
         <entry key="app/src/main/res/layout/activity_loan_list.xml" value="0.19814814814814816" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19814814814814816" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4026268115942029" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_loan_detail.xml" value="0.375" />
+        <entry key="app/src/main/res/menu/item_loan_menu.xml" value="0.19814814814814816" />
+        <entry key="app/src/main/res/menu/menu_loan_detail.xml" value="0.19814814814814816" />
       </map>
     </option>
   </component>
