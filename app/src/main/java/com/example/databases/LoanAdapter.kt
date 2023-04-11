@@ -49,7 +49,7 @@ class LoanAdapter(var loanList: MutableList<Loan>):RecyclerView.Adapter<LoanAdap
         viewHolder.textViewAmountOwedAndName.text = "$${currentLoanData.balanceRemaining()} from ${currentLoanData.loanee}"
         viewHolder.textViewDescription.text = currentLoanData.description
         viewHolder.textViewDateLoaned.text = "Date Loaned: ${currentLoanData.dateLoaned.toString()}"
-        if(currentLoanData.isRepaid){
+        if(currentLoanData.repaid){
             viewHolder.textViewDateRepayed.text = "Date Repaid: ${currentLoanData.dateRepaid.toString()}"
         }
         else{

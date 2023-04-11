@@ -12,9 +12,9 @@ data class Loan(var loanee: String = "Unknown",
                 var dateLoaned: Date = Date(0),
                 var amountRepaid: Double = 0.toDouble(),
                 var dateRepaid: Date? = null,
-                var isRepaid: Boolean = false,
+                var repaid: Boolean = false,
                 var ownerId: String = "",
-                var objectId: String = ""
+                var objectId: String? = ""
                 ):Parcelable
 {
     fun balanceRemaining():Double{

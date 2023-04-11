@@ -1,5 +1,6 @@
 package com.example.databases
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,12 @@ class LoanListActivity: AppCompatActivity() {
         setContentView(binding.root)
         userId = intent.getStringExtra(LoginActivity.EXTRA_USERID).toString()
         retrieveAllData(userId)
+        binding.fabLoanListAdd.setOnClickListener {
+            val loanDetailIntent = Intent(this, LoanDetailActivity::class.java).apply{
+                putExtra(EXTRA_USERID, userId)
+            }
+            startActivity(loanDetailIntent)
+        }
     }
 
     override fun onResume() {
